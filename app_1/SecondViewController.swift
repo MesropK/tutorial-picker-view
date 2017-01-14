@@ -8,6 +8,15 @@
 
 import UIKit
 
-class SecondViewController: NSObject {
+class SecondViewController: UIViewController {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    @IBAction func viewDidTapped(_ sender: UITapGestureRecognizer) {
+        dismiss(animated: true, completion: nil)
+    }
 
 }
